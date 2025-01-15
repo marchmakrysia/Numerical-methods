@@ -22,4 +22,6 @@ X6=[ones(length(x),1) x' x'.^2 x'.^3 x'.^4 x.^5 x.^6]
 A6=inv(X6'*X6)*X6'*Y
 w6=A6(1)+A6(2)*xx+A6(3)*xx.^2+A6(4)*xx.^3+A6(5)*xx.^4+A6(6)*xx.^5+A6(7)*xx.^6
 
-plot(x,y,'*',xx,w,xx,w2,xx,w4,xx,w6)
+p2=polyfit(x,y,2) %funkcja wbudowana
+f=polyval(p2,xx)
+plot(x,y,'*',xx,w,xx,w2,xx,w4,xx,f,'--')
